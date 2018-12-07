@@ -90,30 +90,30 @@ summary(wqr)
 
 ####1. Fixed acidity (tartaric acid - g / dm^3) 
 
-```{r echo=FALSE, Univariate_Plots_FixedAcidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_FixedAcidity_Graph}
 ggplot(aes(x = fixed.acidity), data = wqr) +
   geom_histogram(color = 'black', fill = 'seagreen2', bins = 40)
 ```
 
-```{r echo=FALSE, Univariate_Plots_FixedAcidity_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_FixedAcidity_Summary}
 summary(wqr$fixed.acidity)
 ```
 
 ####2. Volatile acidity (acetic acid - g / dm^3)
 
-```{r echo=FALSE, Univariate_Plots_VolatileAcidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_VolatileAcidity_Graph}
 ggplot(aes(x = volatile.acidity), data = wqr) +
   geom_histogram(color = 'black', fill = 'yellow2', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_VolatileAcidity_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_VolatileAcidity_Summary}
 summary(wqr$volatile.acidity)
 ```
 
 We add to the data set the relationship between volatile and fixed acidity 
 to analyze it later.
 
-```{r echo=FALSE, Univariate_Plots_RelativeVolatileAcidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_RelativeVolatileAcidity_Graph}
 wqr$relative.volatile.acidity <- wqr$volatile.acidity / wqr$fixed.acidity
 
 summary(wqr$relative.volatile.acidity)
@@ -121,17 +121,17 @@ summary(wqr$relative.volatile.acidity)
 
 ####3. Citric acid (g / dm^3) 
 
-```{r echo=FALSE, Univariate_Plots_CitricAcid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_CitricAcid_Graph}
 ggplot(aes(x = citric.acid), data = wqr) +
   geom_histogram(color = 'black', fill = 'orange2', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_CitricAcid_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_CitricAcid_Graph2}
 ggplot(aes(x = citric.acid), data = wqr) +
   geom_histogram(color = 'black', fill = 'orange2', bins = 100)
 ```
 
-```{r echo=FALSE, Univariate_Plots_CitricAcid_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_CitricAcid_Summary}
 summary(wqr$citric.acid)
 ```
 
@@ -147,7 +147,7 @@ a very fruity flavor.
 We add to the data set the relationship between citric acid and fixed acidity 
 to analyze it later.
 
-```{r echo=FALSE, Univariate_Plots_RelativeCitricAcid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_RelativeCitricAcid_Graph}
 wqr$relative.citric.acid <- wqr$citric.acid / wqr$fixed.acidity
 
 summary(wqr$relative.citric.acid)
@@ -155,18 +155,18 @@ summary(wqr$relative.citric.acid)
 
 ####4. Residual sugar (g / dm^3)
 
-```{r echo=FALSE, Univariate_Plots_ResidualSugar_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_ResidualSugar_Graph}
 ggplot(aes(x = residual.sugar), data = wqr) +
   geom_histogram(color = 'black', fill = 'snow2', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_ResidualSugar_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_ResidualSugar_Graph2}
 ggplot(aes(x = residual.sugar), data = wqr) +
   geom_histogram(color = 'black', fill = 'snow2', bins = 30) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_ResidualSugar_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_ResidualSugar_Summary}
 summary(wqr$residual.sugar)
 ```
 
@@ -174,22 +174,22 @@ Using a logarithmic axis we can observe a standard normal curve
 
 ####5. Chlorides (sodium chloride - g / dm^3)  
 
-```{r echo=FALSE, Univariate_Plots_Chlorides_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Chlorides_Graph}
 ggplot(aes(x = chlorides), data = wqr) +
   geom_histogram(color = 'black', fill = 'brown', bins = 30)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Chlorides_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Chlorides_Graph2}
 ggplot(aes(x = chlorides), data = wqr) +
   geom_histogram(color = 'black', fill = 'brown', bins = 50) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_Chlorides_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Chlorides_Summary}
 summary(wqr$chlorides)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Chlorides_Head}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Chlorides_Head}
 head(subset(wqr, wqr$chlorides < 0.02))
 ```
 
@@ -201,39 +201,39 @@ an exceptional wine that seeks this characteristic.
 
 ####6. Free sulfur dioxide (mg / dm^3)
 
-```{r echo=FALSE, Univariate_Plots_FreeSulfurDioxide_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_FreeSulfurDioxide_Graph}
 ggplot(aes(x = free.sulfur.dioxide), data = wqr) +
   geom_histogram(color = 'black', fill = 'khaki', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_FreeSulfurDioxide_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_FreeSulfurDioxide_Graph2}
 ggplot(aes(x = free.sulfur.dioxide), data = wqr) +
   geom_histogram(color = 'black', fill = 'khaki', bins = 20) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_FreeSulfurDioxide_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_FreeSulfurDioxide_Summary}
 summary(wqr$free.sulfur.dioxide)
 ```
 
 ###7. Total sulfur dioxide (mg / dm^3)  
 
-```{r echo=FALSE, Univariate_Plots_TotalSulfurDioxide_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_TotalSulfurDioxide_Graph}
 ggplot(aes(x = total.sulfur.dioxide), data = wqr) +
   geom_histogram(color = 'black', fill = 'khaki3', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_TotalSulfurDioxide_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_TotalSulfurDioxide_Graph2}
 ggplot(aes(x = total.sulfur.dioxide), data = wqr) +
   geom_histogram(color = 'black', fill = 'khaki3', bins = 20) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_TotalSulfurDioxide_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_TotalSulfurDioxide_Summary}
 summary(wqr$total.sulfur.dioxide)
 ```
 
-```{r echo=FALSE, Univariate_Plots_TotalSulfurDioxide_Head}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_TotalSulfurDioxide_Head}
 head(subset(wqr, wqr$total.sulfur.dioxide > 200))
 ```
 
@@ -243,7 +243,7 @@ quality wines but no. They have a value of 7/10
 We add to the data set the relationship between free and total sulfur dioxide 
 to analyze it later.
 
-```{r echo=FALSE, Univariate_Plots_RelatedFreeSulfurDioxide_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_RelatedFreeSulfurDioxide_Graph}
 wqr$relative.sulfur.dioxide <- wqr$free.sulfur.dioxide / wqr$total.sulfur.dioxide
 
 summary(wqr$relative.sulfur.dioxide)
@@ -251,23 +251,23 @@ summary(wqr$relative.sulfur.dioxide)
 
 ####8. Density (g / cm^3)  
 
-```{r echo=FALSE, Univariate_Plots_Density_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Density_Graph}
 ggplot(aes(x = density), data = wqr) +
   geom_histogram(color = 'black', fill = 'blue', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Density_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Density_Summary}
 summary(wqr$density)
 ```
 
 ####9. PH
 
-```{r echo=FALSE, Univariate_Plots_Ph_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Ph_Graph}
 ggplot(aes(x = pH), data = wqr) +
   geom_histogram(color = 'black', fill = 'gray', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Ph_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Ph_Summary}
 summary(wqr$pH)
 ```
 
@@ -281,18 +281,18 @@ very acid pH 2.88 that has a rating of 8!
 
 ####10. Sulphates (potassium sulphate - g / dm3)
 
-```{r echo=FALSE, Univariate_Plots_Sulphates_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Sulphates_Graph}
 ggplot(aes(x = sulphates), data = wqr) +
   geom_histogram(color = 'black', fill = 'tomato', bins = 20)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Sulphates_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Sulphates_Graph2}
 ggplot(aes(x = sulphates), data = wqr) +
   geom_histogram(color = 'black', fill = 'tomato', bins = 20) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_Sulphates_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Sulphates_Summary}
 summary(wqr$sulphates)
 ```
 
@@ -305,33 +305,33 @@ further if there is a relationship between these two variables.
 
 ####11. Alcohol (% by volume)
 
-```{r echo=FALSE, Univariate_Plots_Alcohol_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Alcohol_Graph}
 ggplot(aes(x = alcohol), data = wqr) +
   geom_histogram(color = 'black', fill = 'purple', bins = 30)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Alcohol_Graph2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Alcohol_Graph2}
 ggplot(aes(x = alcohol), data = wqr) +
   geom_histogram(color = 'black', fill = 'purple', bins = 20) +
   scale_x_log10()
 ```
 
-```{r echo=FALSE, Univariate_Plots_Alcohol_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Alcohol_Summary}
 summary(wqr$alcohol)
 ```
 
 ####12. Quality (score between 0 and 10)
 
-```{r echo=FALSE, Univariate_Plots_Quality_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Quality_Graph}
 ggplot(aes(x = quality), data = wqr) +
   geom_histogram(color = 'black', fill = 'gold', bins = 6)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Quality_Summary}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Quality_Summary}
 summary(wqr$quality)
 ```
 
-```{r echo=FALSE, Univariate_Plots_Quality_Discrete}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Quality_Discrete}
 wqr$quality.ranges <- cut(wqr$quality, breaks = c(0, 4, 6, 10), c('Low', 'Medium', 'High'))
 summary(wqr$quality.ranges)
 ```
@@ -343,13 +343,13 @@ I would expect to find some 9 or 10. Perhaps the Portuguese wines do not reach
 such a high quality or perhaps they have not entered into this study because 
 of their price.
 
-```{r echo=FALSE, Univariate_Plots_Quality_Head}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Quality_Head}
 head(subset(wqr, wqr$quality == 8))
 ```
 
 It seems that the wines with the best rating have a high degree of alcohol.
 
-```{r echo=FALSE, Univariate_Plots_Quality_Head2}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Univariate_Plots_Quality_Head2}
 head(subset(wqr, wqr$quality == 3))
 ```
 
@@ -376,11 +376,11 @@ There are 1599 wines in the dataset with 12 features:
 The first 11 attributes are numerical and the last one (Quality) is categorical.
 
 Observations:  
-* Most quality are 5-6.
-* Quality of 8 have high valueos of alcohol.
-* The median of alcohol is around 10%.
-* Almost all wines have pH between 3-4.
-* The density of wine is a little lower than water.
+* Most quality are 5-6.  
+* Quality of 8 have high valueos of alcohol.  
+* The median of alcohol is around 10%.  
+* Almost all wines have pH between 3-4.  
+* The density of wine is a little lower than water.  
 
 ### What is/are the main feature(s) of interest in your dataset?
 The main features in the data set are pH, alcohol and quality. Although surely 
@@ -394,10 +394,10 @@ on the palate.
 
 ### Did you create any new variables from existing variables in the dataset?
 I created the following additional variables:  
-1. Relative Volatile Acidity respect Fixed Acidity.
-2. Relative Citric Acid respect Fixed Acidity.
-3. Relative Free Sulfur Dioxide respect Total Sulfur Dioxide.
-4. Quality Ranges of Quality to Low, Medium and High values.
+1. Relative Volatile Acidity respect Fixed Acidity.  
+2. Relative Citric Acid respect Fixed Acidity.  
+3. Relative Free Sulfur Dioxide respect Total Sulfur Dioxide.  
+4. Quality Ranges of Quality to Low, Medium and High values.  
 
 ### Of the features you investigated, were there any unusual distributions? \
 Did you perform any operations on the data to tidy, adjust, or change the form \
@@ -408,36 +408,34 @@ Acid citric distribution appears bimodal with two peaks around 0 and 0.49.
 In addition to including additional variables, it has not been necessary to 
 perform any additional operations.
 
-TODO REVISAR
-
 # Bivariate Plots Section
 
-```{r echo=FALSE, Bivariate_Plots_GGPairs}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_GGPairs}
 ggpairs(wqr, columns = c(2, 3, 14, 4, 15, 5, 6, 16, 10, 11, 12, 13, 17), axisLabels = 'internal')
 ```
 
 We can found the following correlations:  
-1. Quality and alcohol (0.476)
-2. Quality and volatile acidity (-0.391)
-3. sulphates and citric acid (0.313)
-4. ph and fixed acidity (-0.683)
-5. ph and citrix acid (-0.542)
+1. Quality and alcohol (0.476)  
+2. Quality and volatile acidity (-0.391)  
+3. sulphates and citric acid (0.313)  
+4. ph and fixed acidity (-0.683)  
+5. ph and citrix acid (-0.542)  
 
-Other relationships that I want to check are:
-1. Quality and relative sulfure
-2. Quality and citric acid
-3. Quality and fixed acidity 
-4. Quality and pH
-5. Quality with residual sugar
-6. Quality and chlorides
+Other relationships that I want to check are:  
+1. Quality and relative sulfure  
+2. Quality and citric acid  
+3. Quality and fixed acidity   
+4. Quality and pH  
+5. Quality with residual sugar  
+6. Quality and chlorides  
 
 ####1. Relative Volatile Acidity
 
-```{r echo=FALSE, Bivariate_Plots_relative.volatile.acidity_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.volatile.acidity_Correlation}
 with(wqr, cor.test(fixed.acidity, volatile.acidity, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_relative.volatile.acidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.volatile.acidity_Graph}
 plot1 <- ggplot(aes(x = fixed.acidity, y = volatile.acidity), data = wqr) +
   geom_point(alpha = 1/3, color = "yellow3") +
   geom_smooth()
@@ -454,11 +452,11 @@ the fixed.
 
 ####2. Relative Citric Acid
 
-```{r echo=FALSE, Bivariate_Plots_relative.citric.acid_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.citric.acid_Correlation}
 with(wqr, cor.test(fixed.acidity, citric.acid, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_relative.citric.acid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.citric.acid_Graph}
 plot1 <- ggplot(aes(x = fixed.acidity, y = citric.acid), data = wqr) +
   geom_point(alpha = 1/3, color = "orange3") +
   geom_smooth()
@@ -478,11 +476,11 @@ acidity and an increase in this reduces the volatility.
 
 ####3. Relative Sulfur Dioxide
 
-```{r echo=FALSE, Bivariate_Plots_relative.sulfur.dioxide_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.sulfur.dioxide_Correlation}
 with(wqr, cor.test(total.sulfur.dioxide, free.sulfur.dioxide, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_relative.sulfur.dioxide_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_relative.sulfur.dioxide_Graph}
 plot1 <- ggplot(aes(x = total.sulfur.dioxide, y = free.sulfur.dioxide), data = wqr) +
   geom_point(alpha = 1/3, color = "khaki2") +
   geom_smooth()
@@ -499,11 +497,11 @@ the total sulfur dioxide. The increase dims as the total increases.
 
 ####4. Sulphates and Citric Acid
 
-```{r echo=FALSE, Bivariate_Plots_sulphates_citric.acid_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_sulphates_citric.acid_Correlation}
 with(wqr, cor.test(sulphates, citric.acid, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_sulphates_citric.acid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_sulphates_citric.acid_Graph}
 plot1 <- ggplot(aes(x = sulphates, y = citric.acid), data = wqr) +
   geom_point(alpha = 1/3, color = "tomato2") +
   scale_x_continuous(limits = c(quantile(wqr$sulphates, .01), 
@@ -524,11 +522,11 @@ sulphates and the increase of citric acid.
 
 ####5. pH and Fixed Acidity
 
-```{r echo=FALSE, Bivariate_Plots_pH_fixed.acidity_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_pH_fixed.acidity_Correlation}
 with(wqr, cor.test(pH, fixed.acidity, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_pH_fixed.acid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_pH_fixed.acid_Graph}
 plot1 <- ggplot(aes(x = pH, y = fixed.acidity), data = wqr) +
   geom_point(alpha = 1/3, color = "seagreen3") +
   scale_x_continuous(limits = c(quantile(wqr$pH, .01), 
@@ -548,11 +546,11 @@ As expected, increasing the acidity decreases the pH to more acid.
 
 ####6. pH and Citrix Acid
 
-```{r echo=FALSE, Bivariate_Plots_pH_citric.acid_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_pH_citric.acid_Correlation}
 with(wqr, cor.test(pH, citric.acid, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_pH_citric.acid_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_pH_citric.acid_Graph}
 plot1 <- ggplot(aes(x = pH, y = citric.acid), data = wqr) +
   geom_point(alpha = 1/3, color = "orange3") +
   scale_x_continuous(limits = c(quantile(wqr$pH, .01), 
@@ -572,11 +570,11 @@ As expected, as in the previous case, increasing citric acid decreases the pH to
 
 ####7. Quality and pH
 
-```{r echo=FALSE, Bivariate_Plots_quality_pH_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_pH_Correlation}
 with(wqr, cor.test(quality, pH, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_pH_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_pH_Graph}
 plot1 <- ggplot(aes(x = quality, y = pH), data = wqr) +
   geom_jitter(alpha = 1/3, color = "gray") +
   scale_x_continuous() +
@@ -601,11 +599,11 @@ more acid than in the rest.
 
 ####8. Quality and Volatile Acidity
 
-```{r echo=FALSE, Bivariate_Plots_quality_volatile.acidity_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_volatile.acidity_Correlation}
 with(wqr, cor.test(quality, volatile.acidity, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_volatile.acidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_volatile.acidity_Graph}
 plot1 <- ggplot(aes(x = quality, y = volatile.acidity), data = wqr) +
   geom_jitter(alpha = 1/3, color = "yellow3") +
   scale_x_continuous() +
@@ -629,11 +627,11 @@ the quality of the wine.
 
 ####9. Quality and Alcohol
 
-```{r echo=FALSE, Bivariate_Plots_quality_alcohol_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_alcohol_Correlation}
 with(wqr, cor.test(quality, alcohol, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_alcohol_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_alcohol_Graph}
 plot1 <- ggplot(aes(x = quality, y = alcohol), data = wqr) +
   geom_jitter(alpha = 1/3, color = "purple") +
   scale_x_continuous() +
@@ -654,11 +652,11 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 
 ####10. Quality and Fixed Acidity
 
-```{r echo=FALSE, Bivariate_Plots_quality_fixed.acidity_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_fixed.acidity_Correlation}
 with(wqr, cor.test(quality, fixed.acidity, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_fixed.acidity_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_fixed.acidity_Graph}
 plot1 <- ggplot(aes(x = quality, y = fixed.acidity), data = wqr) +
   geom_jitter(alpha = 1/3, color = "seagreen3") +
   scale_x_continuous() +
@@ -684,11 +682,11 @@ Maybe it's because the acidity in the mouth is positive but not in the nose.
 
 ####11. Quality and Residual Sugar
 
-```{r echo=FALSE, Bivariate_Plots_quality_residual.sugar_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_residual.sugar_Correlation}
 with(wqr, cor.test(quality, residual.sugar, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_residual.sugar_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_residual.sugar_Graph}
 plot1 <- ggplot(aes(x = quality, y = residual.sugar), data = wqr) +
   geom_jitter(alpha = 1/3, color = "snow2") +
   scale_x_continuous() +
@@ -712,11 +710,11 @@ between quality and sugar.
 
 ####12. Quality and Chlorides
 
-```{r echo=FALSE, Bivariate_Plots_quality_chlorides_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_chlorides_Correlation}
 with(wqr, cor.test(quality, chlorides, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_quality_chlorides_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_quality_chlorides_Graph}
 plot1 <- ggplot(aes(x = quality, y = chlorides), data = wqr) +
   geom_jitter(alpha = 1/3, color = "brown2") +
   scale_x_continuous() +
@@ -740,11 +738,11 @@ tendency to improve the quality of the wine with the decrease in chlorides
 
 ####12. Alcohol and Density
 
-```{r echo=FALSE, Bivariate_Plots_alcohol_density_Correlation}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_alcohol_density_Correlation}
 with(wqr, cor.test(alcohol, density, method="pearson"))
 ```
 
-```{r echo=FALSE, Bivariate_Plots_alcohol_density_Graph}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Bivariate_Plots_alcohol_density_Graph}
 plot1 <- ggplot(aes(x = alcohol, y = density), data = wqr) +
   geom_jitter(alpha = 1/3, color = "dark red") +
   scale_x_continuous(limits = c(quantile(wqr$alcohol, .01), 
@@ -793,7 +791,7 @@ by alcohol and quality (0.48).
 
 ####1. Acids relationships
 
-```{r echo=FALSE, Multivariate_Plots_Acids}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Multivariate_Plots_Acids}
 ggplot(aes(x = fixed.acidity, y = volatile.acidity, color = citric.acid), data = wqr) +
   geom_point() +
   facet_wrap(~quality.ranges) +
@@ -805,7 +803,7 @@ but directly to citric acid.
 
 ####2. SO2 relationships
 
-```{r echo=FALSE, Multivariate_Plots_S02}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Multivariate_Plots_S02}
 ggplot(aes(x = sulphates, y = total.sulfur.dioxide, color = free.sulfur.dioxide), data = wqr) +
   geom_point() +
   geom_smooth() +
@@ -817,7 +815,7 @@ relationship between free and total sulfur, as previously noted.
 
 ####3. Quality positive factors
 
-```{r echo=FALSE, Multivariate_Plots_Positive}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Multivariate_Plots_Positive}
 ggplot(aes(x = fixed.acidity, y = pH, color = alcohol), data = wqr) +
   geom_point() +
   facet_wrap(~quality.ranges) +
@@ -830,12 +828,12 @@ presence of higher concentrations of alcohol in high quality wines is clear.
 
 ####4. Quality negative factors
 
-```{r echo=FALSE, Multivariate_Plots_Negative}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Multivariate_Plots_Negative}
 ggplot(aes(x = quality, y = volatile.acidity, color = chlorides), data = wqr) +
   geom_jitter() +
   geom_line(stat = 'summary', fun.y = median, color = 'orange', linetype = 1) +
   geom_line(stat = 'summary', fun.y = mean, color = 'red', linetype = 2) +
-  scale_colour_gradient(low = "yellow", high = "green")
+  scale_colour_gradient(low = "yellow2", high = "green")
 ```
 
 The tendency to improve wine quality by decreasing volatile acidity and 
@@ -843,7 +841,7 @@ chlorides is also clear.
 
 ####5. Linear Model
 
-```{r echo=FALSE, Multivariate_Plots_LinearModel}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Multivariate_Plots_LinearModel}
 m1 <- lm(quality ~ alcohol, data = wqr)
 m2 <- update(m1, ~ . + pH)
 m3 <- update(m2, ~ . + fixed.acidity)
@@ -880,7 +878,7 @@ attributes of the wines.
 # Final Plots and Summary
 
 ### Plot One
-```{r echo=FALSE, Plot_One}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Plot_One}
 ggplot(aes(x = fixed.acidity, y = volatile.acidity, color = citric.acid), data = wqr) +
   geom_point() +
   facet_wrap(~quality.ranges) +
@@ -899,7 +897,7 @@ and a tendency to low volatile acidity and fixed acidity when increasing the
 quality of the wine.
 
 ### Plot Two
-```{r echo=FALSE, Plot_Two}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Plot_Two}
 plot1 <- ggplot(aes(x = quality, y = alcohol), data = wqr) +
   geom_jitter(alpha = 1/3, color = "purple") +
   scale_x_continuous() +
@@ -936,7 +934,7 @@ It would have been very interesting if we had in the data set information about
 the maturation time of the wine.
 
 ### Plot Three
-```{r echo=FALSE, Plot_Three}
+```{r echo=FALSE, message=FALSE, warning=FALSE, Plot_Three}
 plot1 <- ggplot(aes(x = alcohol, y = density), data = wqr) +
   geom_jitter(alpha = 1/3, color = "dark red") +
   scale_x_continuous(limits = c(quantile(wqr$alcohol, .05), 
